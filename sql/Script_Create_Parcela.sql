@@ -44,5 +44,5 @@ CREATE TABLE parcela_oltp (
 
 
 COPY parcela_oltp(obra, bloco, unidade, id_contrato_vencimento, contrato, datavencimento, valorprestacao, principal, jurostp, variacoes, seguros, descontos, multa, jurosmora, prorataindice, proratacontrato, valorpresente, indicereajuste, situacaoparcela, boletojm, vencimentojm, periodicidade, tipocontrato, tipoemprestimo, tipobloqueio, crm_processamentopendente, crm_operacao, crm_parcelaid, createdon, modifiedon, geradopor, idreneg, datarenegociacao, valorabono, valoracrescimo, vlrabonomulta, vlrabonojuros, vlrabonoprorata, tx_juros, tx_encargos, motivorenegociacao) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Parcelas.csv' 
+FROM '../DadosCSV/Dados_Tabela_Parcelas.csv' 
 WITH DELIMITER ';' NULL as 'NULL'

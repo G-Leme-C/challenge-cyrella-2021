@@ -12,5 +12,5 @@ CREATE TABLE controle_sessao_oltp (
 
 
 COPY controle_sessao_oltp(id, dataAcesso, hash, dataExpiracao, cliente, tipoAcesso, loginatendente, tiposessao, origem) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Controlesessao.csv' 
+FROM '../DadosCSV/Dados_Tabela_Controlesessao.csv' 
 WITH DELIMITER ';' NULL as 'NULL'

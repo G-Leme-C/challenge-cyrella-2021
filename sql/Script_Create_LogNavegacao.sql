@@ -12,5 +12,5 @@ CREATE TABLE log_navegacao_oltp(
 )
 
 COPY log_navegacao_oltp(id, documentocliente, dataevento, tipoevento, tipoacesso, idatendente, pagina, atividade, logerro, origem) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_LogNavegacao.csv' 
+FROM '../DadosCSV/Dados_Tabela_LogNavegacao.csv' 
 WITH DELIMITER ';' NULL as 'NULL'

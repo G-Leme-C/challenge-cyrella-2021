@@ -63,5 +63,5 @@ CREATE TABLE posicao_financeira_oltp(
 )
 
 COPY posicao_financeira_oltp(obra, bloco, unidade, empresa, situacaounidade, datavenda, valorvenda, dataliberacaochaves, formapagamento, faseincorporacao, datacessao, datadesembolso, datadntregainicial, datahabitese, statusdistrato, datachaves, indiceprechaves, indiceposchaves, debitoautomatico, saldodevedor, diasatraso, valoratraso, totalatraso, crm_processamentopendente, crm_operacao, crm_posicaofinanceiraid, createdon, modifiedon, dataprevisaoentrega, valorpago, valorpagoatualizado, tipopagamento, dataquitacao, Valorquitacao, lr_tipocontrato, lr_saldo, lr_dataVencimento, lr_codigo, lr_datarenegociacao, pcvf_saldodevedor, pcvf_totalatraso, pcvu_saldodevedor, pcvu_totalatraso, PCVP_saldodevedor, PCVP_totalatraso, dec_saldodevedor, dec_totalatraso, mod_saldodevedor, mod_totalatraso, lig_saldodevedor, lig_totalatraso, tcs_saldodevedor, tcs_totalatraso, lot_saldodevedor, lot_totalatraso, crm_processamentopendenterepasse, valortotalreceberobras, valorparcelachaves, valortotalposobra, dataultimaprestacaopaga, dataultimaalteracao) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_PosicaoFinanceira.csv' 
+FROM '../DadosCSV/Dados_Tabela_PosicaoFinanceira.csv' 
 WITH DELIMITER ';' NULL as 'NULL'

@@ -14,4 +14,4 @@ CREATE TABLE coobrigado_oltp (
 )
 
 COPY coobrigado_oltp(id, obra, bloco, unidade, nome, cpf_cnpj, percentualparticipacao, principal, createdon, modifiedon, ativo, codclientesap) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Clientes.csv' WITH DELIMITER ';'
+FROM '../DadosCSV/Dados_Tabela_Clientes.csv' WITH DELIMITER ';'

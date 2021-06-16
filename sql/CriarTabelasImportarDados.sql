@@ -15,7 +15,7 @@ CREATE TABLE coobrigado_oltp (
 );
 
 COPY coobrigado_oltp(id, obra, bloco, unidade, nome, cpf_cnpj, percentualparticipacao, principal, createdon, modifiedon, ativo, codclientesap) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Clientes.csv' WITH DELIMITER ';';
+FROM '../DadosCSV/Dados_Tabela_Clientes.csv' WITH DELIMITER ';';
 
 
 ------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE controle_sessao_oltp (
 );
 
 COPY controle_sessao_oltp(id, dataAcesso, hash, dataExpiracao, cliente, tipoAcesso, loginatendente, tiposessao, origem) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Controlesessao.csv' 
+FROM '../DadosCSV/Dados_Tabela_Controlesessao.csv' 
 WITH DELIMITER ';' NULL as 'NULL';
 
 
@@ -54,7 +54,7 @@ CREATE TABLE log_navegacao_oltp(
 );
 
 COPY log_navegacao_oltp(id, documentocliente, dataevento, tipoevento, tipoacesso, idatendente, pagina, atividade, logerro, origem) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_LogNavegacao.csv' 
+FROM '../DadosCSV/Dados_Tabela_LogNavegacao.csv' 
 WITH DELIMITER ';' NULL as 'NULL';
 
 
@@ -107,7 +107,7 @@ CREATE TABLE parcela_oltp (
 
 
 COPY parcela_oltp(obra, bloco, unidade, id_contrato_vencimento, contrato, datavencimento, valorprestacao, principal, jurostp, variacoes, seguros, descontos, multa, jurosmora, prorataindice, proratacontrato, valorpresente, indicereajuste, situacaoparcela, boletojm, vencimentojm, periodicidade, tipocontrato, tipoemprestimo, tipobloqueio, crm_processamentopendente, crm_operacao, crm_parcelaid, createdon, modifiedon, geradopor, idreneg, datarenegociacao, valorabono, valoracrescimo, vlrabonomulta, vlrabonojuros, vlrabonoprorata, tx_juros, tx_encargos, motivorenegociacao) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_Parcelas.csv' 
+FROM '../DadosCSV/Dados_Tabela_Parcelas.csv' 
 WITH DELIMITER ';' NULL as 'NULL';
 
 
@@ -179,5 +179,25 @@ CREATE TABLE posicao_financeira_oltp(
 );
 
 COPY posicao_financeira_oltp(obra, bloco, unidade, empresa, situacaounidade, datavenda, valorvenda, dataliberacaochaves, formapagamento, faseincorporacao, datacessao, datadesembolso, datadntregainicial, datahabitese, statusdistrato, datachaves, indiceprechaves, indiceposchaves, debitoautomatico, saldodevedor, diasatraso, valoratraso, totalatraso, crm_processamentopendente, crm_operacao, crm_posicaofinanceiraid, createdon, modifiedon, dataprevisaoentrega, valorpago, valorpagoatualizado, tipopagamento, dataquitacao, Valorquitacao, lr_tipocontrato, lr_saldo, lr_dataVencimento, lr_codigo, lr_datarenegociacao, pcvf_saldodevedor, pcvf_totalatraso, pcvu_saldodevedor, pcvu_totalatraso, PCVP_saldodevedor, PCVP_totalatraso, dec_saldodevedor, dec_totalatraso, mod_saldodevedor, mod_totalatraso, lig_saldodevedor, lig_totalatraso, tcs_saldodevedor, tcs_totalatraso, lot_saldodevedor, lot_totalatraso, crm_processamentopendenterepasse, valortotalreceberobras, valorparcelachaves, valortotalposobra, dataultimaprestacaopaga, dataultimaalteracao) 
-FROM 'C:\Gabriel\FIAP\2021\Fase4\Challenge\02_Dados\Dados_Tabela_PosicaoFinanceira.csv' 
+FROM '../DadosCSV/Dados_Tabela_PosicaoFinanceira.csv' 
 WITH DELIMITER ';' NULL as 'NULL';
+
+------------------------------------------
+
+CREATE TABLE regiao_interesse (
+	id int NOT NULL,
+	idade int(2) NOT NULL,
+	empresa varchar(150) NOT NULL,
+	orcamento dec(6) NOT NULL,
+	nome varchar(150) NOT NULL,
+	coordenadas dec(20,20) NOT NULL,
+	regiao_interesse varchar(150) NOT NULL,
+	tipo_localizacao varchar(150) NOT NULL,
+	createdon timestamp NULL,
+	modifiedon timestamp NULL,
+	ativo bit NULL,
+	codclientesap varchar(10) NULL
+)
+
+COPY regiao_interesse(id, idade, empresa, orcamento, nome, coordenadas, regiao_interesse, tipo_localizacao, createdon, modifiedon, ativo, codclientesap) 
+FROM '../DadosCSV/Dados_Tabela_Regiao_Interesse.csv' WITH DELIMITER ','
