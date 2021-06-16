@@ -127,3 +127,6 @@ Tabela posicao_financeira_oltp:
 	lr_datavencimento = lr_datavencimento + interval '1 year',
 	lr_datarenegociacao = lr_datarenegociacao + interval '1 year',
 	dataultimaprestacaopaga = dataultimaprestacaopaga + interval '1 year'
+
+### Corrigir dados incorretos na posicao_financeira_oltp
+	update posicao_financeira_oltp set valorpago = ABS(valorpago), valorpagoatualizado = ABS(valorpagoatualizado)
